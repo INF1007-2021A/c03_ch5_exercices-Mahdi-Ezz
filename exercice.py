@@ -7,7 +7,7 @@ from typing import List
 
 def convert_to_absolute(number: float) -> float:
     if number < 0:
-        number = number*-1
+        number *=-1
     return number
 
 
@@ -47,19 +47,19 @@ def use_continue() -> None:
 
 def verify_ages(groups: List[List[int]]) -> List[bool]:
     acceptance=[]
-    for i in range(len(groups)):
-        if len(groups[i])>10 or len(groups[i])<=3:
+    for num_groupe in range(len(groups)):
+        if len(groups[num_groupe])>10 or len(groups[num_groupe])<=3:
             acceptance.append(False)
             continue
         else:
-            for n in groups[i]:
-                if 25 in groups[i]:
+            for age in groups[num_groupe]:
+                if 25 in groups[num_groupe]:
                     acceptance.append(True)
                     break
-                elif n<18:
+                elif age<18:
                     acceptance.append(False)
                     break
-                elif n>70 and 50 in groups[i]:
+                elif age>70 and 50 in groups[num_groupe]:
                     acceptance.append(False)
                     break
                 else:
